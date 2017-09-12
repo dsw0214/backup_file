@@ -1,0 +1,62 @@
+# chmod +x linux_backup_file #更改文件执行权限
+# 
+# ls -la t1/ #查看测试源目录
+total 8
+drwxr-xr-x 2 root root 4096 Sep 11 18:54 .
+drwxr-xr-x 5 root root 4096 Sep 11 18:57 ..
+-rw-r--r-- 1 root root    0 Sep 11 18:42 1
+# ls -la t2/ #查看测试目标目录
+total 8
+drwxr-xr-x 2 root root 4096 Sep 11 18:56 .
+drwxr-xr-x 5 root root 4096 Sep 11 18:57 ..
+# pwd　#查看当前所在目录
+/home/www-data/python
+# ./linux_backup_file #执行备份
+#Author:shiwei.du
+#Website:https://www.dushiwei.cn
+#Desc:Under Windows system increment backup dir and tar backup file
+#FileName:win_backup_file.exe
+#Warning:
+#1):Remember to add backslash at the end of the path
+#2):Never delete the .Log file in the backup directory unless you don't want to continue updating incrementally
+Please Input Source Directory:
+/home/www-data/python/t1/
+Please Input Backup Directory(Not exits auto create!!!):
+/home/www-data/python/t2/
+Please Input BackupName,Default is Source Last Directory:
+backname
+Source Directory is :/home/www-data/python/t1/
+Backup Directory is :/home/www-data/python/t2/
+Full backup is in progressing ... #由于是第一次执行备份,备份的目标目录中不存在备份文件，这个时候全部备份
+BackupName:backname_full.tar.gz
+# ls -la t2/ #查看新的目标目录
+total 16
+drwxr-xr-x 2 root root 4096 Sep 11 18:59 .
+drwxr-xr-x 5 root root 4096 Sep 11 18:57 ..
+-rw-r--r-- 1 root root  225 Sep 11 18:59 .backname_full.log
+-rw-r--r-- 1 root root  192 Sep 11 18:59 backname_full.tar.gz
+# touch t1/2  #源新增文件2 
+# ./linux_backup_file 
+#Author:shiwei.du
+#Website:https://www.dushiwei.cn
+#Desc:Under Windows system increment backup dir and tar backup file
+#FileName:win_backup_file.exe
+#Warning:
+#1):Remember to add backslash at the end of the path
+#2):Never delete the .Log file in the backup directory unless you don't want to continue updating incrementally
+Please Input Source Directory:
+/home/www-data/python/t1/
+Please Input Backup Directory(Not exits auto create!!!):
+/home/www-data/python/t2/        
+Please Input BackupName,Default is Source Last Directory:
+backname
+Source Directory is :/home/www-data/python/t1/
+Backup Directory is :/home/www-data/python/t2/
+Incremental backup is in progressing ... #由于是第二次执行备份,备份的目标目录中存在备份文件，这个时候增量备份
+BackupName:backname_full.tar.gz
+# ls -la t2/ #查看新的目标目录
+total 16
+drwxr-xr-x 2 root root 4096 Sep 11 18:59 .
+drwxr-xr-x 5 root root 4096 Sep 11 18:57 ..
+-rw-r--r-- 1 root root  225 Sep 11 18:59 .backname_full.log
+-rw-r--r-- 1 root root  192 Sep 11 18:59 backname_full.tar.gz
