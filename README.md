@@ -10,7 +10,7 @@
 
 1:window下使用说明：
 > - win_backup_file.exe  Window下备份目录的执行文件  
-> - 行效果如下:   
+> - 运行效果如下:   
 >  
 >     ![第一次运行](https://github.com/dsw0214/backup_file/blob/master/win_backup_first_time.png)
 >       ：
@@ -19,8 +19,8 @@
 
 2:linux下使用说明
 
->  -  linux_backup_file      linux环境下备份脚本
->  - linux_bakc_file.txt     linux下执行范例
+>  - linux_backup_file      linux环境下备份脚本
+>  - llinux_backup_file.txt     linux下执行范例
 
 3：参数说明：
 > - 第一个提示输入的路径为将要备份的源目录(确保将要备份的目录存在)
